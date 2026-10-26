@@ -6,7 +6,7 @@ use App\Repository\TontineRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: TontineRepository::class)]
-class Tontine
+class Tontine extends Campagne
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]

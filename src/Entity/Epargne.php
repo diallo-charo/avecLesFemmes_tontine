@@ -6,7 +6,7 @@ use App\Repository\EpargneRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: EpargneRepository::class)]
-class Epargne
+class Epargne extends Campagne
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
