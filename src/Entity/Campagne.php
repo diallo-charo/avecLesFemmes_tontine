@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\CampagneRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -28,6 +30,17 @@ class Campagne
 
     #[ORM\Column]
     private ?\DateTime $updateAt = null;
+
+    /**
+     * @var Collection<int, Versement>
+     */
+    #[ORM\OneToMany(targetEntity: Versement::class, mappedBy: 'campagne')]
+    private Collection $versements;
+
+    public function __construct()
+    {
+        $this->versements = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -90,6 +103,35 @@ class Campagne
     public function setUpdateAt(\DateTime $updateAt): static
     {
         $this->updateAt = $updateAt;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Versement>
+     */
+    public function getVersements(): Collection
+    {
+        return $this->versements;
+    }
+
+    public function addVersement(Versement $versement): static
+    {
+        if (!$this->versements->contains($versement)) {
+            $this->versements->add($versement);
+            $versement->setCampagne($this);
+        }
+
+        return $this;
+    }
+
+    public function removeVersement(Versement $versement): static
+    {
+        if ($this->versements->removeElement($versement)) {
+            if ($versement->getCampagne() === $this) {
+                $versement->setCampagne(null);
+            }
+        }
 
         return $this;
     }
