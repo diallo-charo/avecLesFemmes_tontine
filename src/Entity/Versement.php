@@ -23,6 +23,10 @@ class Versement
     #[ORM\ManyToOne(inversedBy: 'versements')]
     private ?Campagne $campagne = null;
 
+    #[ORM\ManyToOne(inversedBy: 'versements')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Membre $membre = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -60,6 +64,18 @@ class Versement
     public function setCampagne(?Campagne $campagne): static
     {
         $this->campagne = $campagne;
+
+        return $this;
+    }
+
+    public function getMembre(): ?Membre
+    {
+        return $this->membre;
+    }
+
+    public function setMembre(?Membre $membre): static
+    {
+        $this->membre = $membre;
 
         return $this;
     }
