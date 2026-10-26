@@ -30,9 +30,16 @@ class Groupement
     #[ORM\OneToMany(targetEntity: Membre::class, mappedBy: 'groupement')]
     private Collection $membres;
 
+    /**
+     * @var Collection<int, User>
+     */
+    #[ORM\OneToMany(targetEntity: User::class, mappedBy: 'groupement')]
+    private Collection $users;
+
     public function __construct()
     {
         $this->membres = new ArrayCollection();
+        $this->users = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -100,6 +107,36 @@ class Groupement
             // set the owning side to null (unless already changed)
             if ($membre->getGroupement() === $this) {
                 $membre->setGroupement(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, User>
+     */
+    public function getUsers(): Collection
+    {
+        return $this->users;
+    }
+
+    public function addUser(User $user): static
+    {
+        if (!$this->users->contains($user)) {
+            $this->users->add($user);
+            $user->setGroupement($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): static
+    {
+        if ($this->users->removeElement($user)) {
+            // set the owning side to null (unless already changed)
+            if ($user->getGroupement() === $this) {
+                $user->setGroupement(null);
             }
         }
 

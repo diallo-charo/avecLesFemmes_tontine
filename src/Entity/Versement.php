@@ -27,6 +27,9 @@ class Versement
     #[ORM\JoinColumn(nullable: false)]
     private ?Membre $membre = null;
 
+    #[ORM\ManyToOne(inversedBy: 'versements')]
+    private ?User $utilisateur = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -76,6 +79,18 @@ class Versement
     public function setMembre(?Membre $membre): static
     {
         $this->membre = $membre;
+
+        return $this;
+    }
+
+    public function getUtilisateur(): ?User
+    {
+        return $this->utilisateur;
+    }
+
+    public function setUtilisateur(?User $utilisateur): static
+    {
+        $this->utilisateur = $utilisateur;
 
         return $this;
     }
