@@ -26,6 +26,10 @@ class Membre
     #[ORM\JoinColumn(nullable: false)]
     private ?Groupement $groupement = null;
 
+    #[ORM\ManyToOne(inversedBy: 'membres')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?CaisseSocial $caisseSocial = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -75,6 +79,18 @@ class Membre
     public function setGroupement(?Groupement $groupement): static
     {
         $this->groupement = $groupement;
+
+        return $this;
+    }
+
+    public function getCaisseSocial(): ?CaisseSocial
+    {
+        return $this->caisseSocial;
+    }
+
+    public function setCaisseSocial(?CaisseSocial $caisseSocial): static
+    {
+        $this->caisseSocial = $caisseSocial;
 
         return $this;
     }
