@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-use App\Enum\StatusExercice;
+use App\enum\StatusExercice;
 use App\Repository\ExerciceRepository;
 use App\Traits\DateTimeTrait;
 use Doctrine\ORM\Mapping as ORM;
