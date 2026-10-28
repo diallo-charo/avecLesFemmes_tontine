@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\CampagneRepository;
+use App\Traits\DateTimeTrait;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -17,6 +18,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 class Campagne
 {
+    
+    use DateTimeTrait;
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -33,6 +37,7 @@ class Campagne
 
     #[ORM\ManyToOne(inversedBy: 'campagnes')]
     private ?Groupement $groupement = null;
+
 
     public function getId(): ?int
     {

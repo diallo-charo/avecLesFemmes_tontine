@@ -4,11 +4,13 @@ namespace App\Entity;
 
 use App\Enum\StatusExercice;
 use App\Repository\ExerciceRepository;
+use App\Traits\DateTimeTrait;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ExerciceRepository::class)]
 class Exercice
 {
+    use DateTimeTrait;
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]

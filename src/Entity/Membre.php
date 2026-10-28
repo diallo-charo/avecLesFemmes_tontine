@@ -3,11 +3,15 @@
 namespace App\Entity;
 
 use App\Repository\MembreRepository;
+use App\Traits\DateTimeTrait;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: MembreRepository::class)]
 class Membre
 {
+
+    use DateTimeTrait;
+    
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
