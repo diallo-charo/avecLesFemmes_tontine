@@ -34,6 +34,11 @@ class Exercice
     #[ORM\Column(enumType: StatusExercice::class)]
     private ?StatusExercice $status = null;
 
+    public function __construct()
+    {
+        $this->initDate();
+    }
+
     public function getId(): ?int
     {
         return $this->id;

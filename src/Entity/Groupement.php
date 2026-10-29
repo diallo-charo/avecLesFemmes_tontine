@@ -50,6 +50,7 @@ class Groupement
         $this->membres = new ArrayCollection();
         $this->campagnes = new ArrayCollection();
         $this->exercices = new ArrayCollection();
+         $this->initDate();
     }
 
     public function getId(): ?int

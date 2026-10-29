@@ -11,7 +11,7 @@ class Membre
 {
 
     use DateTimeTrait;
-    
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -34,6 +34,10 @@ class Membre
     #[ORM\JoinColumn(nullable: false)]
     private ?CaisseSocial $caisseSocial = null;
 
+    public function __construct()
+    {
+         $this->initDate();
+    }
     public function getId(): ?int
     {
         return $this->id;

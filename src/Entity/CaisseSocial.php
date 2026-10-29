@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
 class CaisseSocial
 {
     use DateTimeTrait;
-    
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -33,6 +33,7 @@ class CaisseSocial
     public function __construct()
     {
         $this->membres = new ArrayCollection();
+         $this->initDate();
     }
 
     public function getId(): ?int

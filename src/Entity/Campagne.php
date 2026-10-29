@@ -18,7 +18,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 class Campagne
 {
-    
+
     use DateTimeTrait;
 
     #[ORM\Id]
@@ -37,6 +37,11 @@ class Campagne
 
     #[ORM\ManyToOne(inversedBy: 'campagnes')]
     private ?Groupement $groupement = null;
+
+    public function __construct()
+    {
+         $this->initDate();
+    }
 
 
     public function getId(): ?int
