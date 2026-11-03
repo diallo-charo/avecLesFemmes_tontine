@@ -1,7 +1,7 @@
 <?php
-namespace App\Service;
+namespace App\Dto;
 
-use App\Entity\Exercice;
+use App\Dto\ExerciceEncoursDto as DtoExerciceEncoursDto;
 use App\Entity\Groupement;
 
 class ListeGroupementDto {
@@ -10,21 +10,19 @@ class ListeGroupementDto {
         public readonly string $nom,
         public readonly string $telephone,
         public readonly string $adresse,
-        public readonly ,
+        public readonly DtoExerciceEncoursDto $exerciceEncours,
     ) {
 
     }
 
-    public static function entityToDto( Groupement $groupement,Exercice $exercice) {
+    public static function fromEntity( Groupement $groupement,DtoExerciceEncoursDto $exerciceEncours): self {
         // A Implementer pour convertir un entity Groupement en ListeGroupementDto
         return new self(
             $groupement->getNom(),
-            $groupement->get
+            $groupement->getTelephone(),
+            $groupement->getAdresse(),
+            $exerciceEncours
         );
     }
 
-    public static function entitiesToDtos($groupements) {
-        // A Implementer pour convertir un tableau d'entity Groupement en tableau de ListeGroupementDto
-        return null;
-    }
 }
