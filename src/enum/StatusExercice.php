@@ -11,4 +11,5 @@ enum StatusExercice: string {
             self::TERMINER => "Terminer",
         };
     }
+
 }

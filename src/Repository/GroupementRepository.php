@@ -16,6 +16,35 @@ class GroupementRepository extends ServiceEntityRepository
         parent::__construct($registry, Groupement::class);
     }
 
+    public function save(Groupement $entity, bool $flush = false): void
+    {
+        $this->getEntityManager()->persist($entity);
+
+        if ($flush) {
+            $this->getEntityManager()->flush();
+        }
+    }
+
+    public function remove(Groupement $entity, bool $flush = false): void
+    {
+        $this->getEntityManager()->remove($entity);
+
+        if ($flush) {
+            $this->getEntityManager()->flush();
+        }
+    }
+
+    public function findAllGroupementWithExerciceEncours(): array
+    {
+        $qb = $this->createQueryBuilder('g')
+            ->leftJoin('g.exercices', 'e')
+            ->addSelect('e')
+            ->where('e.status = :status')
+            ->setParameter('status', 'En_cours');
+
+        return $qb->getQuery()->getResult();
+    }
+
 //    /**
 //     * @return Groupement[] Returns an array of Groupement objects
 //     */

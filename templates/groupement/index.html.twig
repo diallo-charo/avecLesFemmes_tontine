@@ -1,0 +1,449 @@
+
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>La Calebasse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#f2f3ef] text-[#1c1f2a]">
+
+    <!-- ================= GROUPEMENT ================= -->
+    <section id="groupement">
+
+        <header class="bg-white">
+            <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
+                <a href="#groupement" class="py-4 text-xl font-bold text-[#1c1f2a]">
+                    La Calebasse
+                </a>
+
+                <nav>
+                    <ul class="flex gap-2 text-sm">
+                        <li>
+                            <a href="#groupement" class="block px-4 py-3 rounded-full bg-[#e6e9f6] text-[#2c3e91] font-bold">
+                                Groupement
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#exercice" class="block px-4 py-3 rounded-full text-[#555b6e] hover:bg-[#f2f3ef] hover:text-[#1c1f2a]">
+                                Exercice
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#campagne" class="block px-4 py-3 rounded-full text-[#555b6e] hover:bg-[#f2f3ef] hover:text-[#1c1f2a]">
+                                Campagne
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main class="max-w-6xl mx-auto px-6 py-8">
+
+            <div class="mb-7">
+                <h1 class="text-3xl font-bold text-[#1c1f2a]">Liste des groupements</h1>
+                <p class="text-sm text-[#555b6e] mt-2">
+                    Gérez les différents groupements enregistrés.
+                </p>
+            </div>
+
+            <details class="mb-6 bg-white border border-[#dadde3] rounded-xl">
+                <summary class="cursor-pointer list-none inline-flex m-5 bg-[#2c3e91] hover:bg-[#202f76] text-white px-5 py-3 rounded-lg text-sm font-bold">
+                    + Ajouter un groupement
+                </summary>
+
+                <form action="#" method="post" class="px-5 pb-5 grid gap-4 sm:grid-cols-3">
+
+                    <div>
+                        <label for="g-nom" class="block text-sm font-bold text-[#1c1f2a] mb-2">Nom</label>
+                        <input id="g-nom" name="nom" type="text" required
+                            class="w-full border border-[#dadde3] bg-white text-[#1c1f2a] rounded-lg px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#a86412]/40 focus:border-[#2c3e91]">
+                    </div>
+
+                    <div>
+                        <label for="g-tel" class="block text-sm font-bold text-[#1c1f2a] mb-2">Téléphone</label>
+                        <input id="g-tel" name="telephone" type="tel" required
+                            class="w-full border border-[#dadde3] bg-white text-[#1c1f2a] rounded-lg px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#a86412]/40 focus:border-[#2c3e91]">
+                    </div>
+
+                    <div>
+                        <label for="g-adresse" class="block text-sm font-bold text-[#1c1f2a] mb-2">Adresse</label>
+                        <input id="g-adresse" name="adresse" type="text" required
+                            class="w-full border border-[#dadde3] bg-white text-[#1c1f2a] rounded-lg px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#a86412]/40 focus:border-[#2c3e91]">
+                    </div>
+
+                    <div class="sm:col-span-3">
+                        <button type="submit" class="px-5 py-2.5 rounded-lg text-sm font-bold bg-[#2c3e91] hover:bg-[#202f76] text-white">
+                            Enregistrer
+                        </button>
+                    </div>
+
+                </form>
+            </details>
+
+            <div class="bg-white border border-[#dadde3] rounded-xl overflow-x-auto">
+                <table class="w-full text-sm text-left">
+                    <thead class="bg-[#e6e9f6] text-[#2c3e91]">
+                        <tr>
+                            <th class="px-4 py-4 font-bold">Nom</th>
+                            <th class="px-4 py-4 font-bold">Téléphone</th>
+                            <th class="px-4 py-4 font-bold">Adresse</th>
+                            <th class="px-4 py-4 font-bold text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    {% %}
+                    <tbody class="divide-y divide-[#dadde3]">
+
+                        <tr class="hover:bg-[#f2f3ef]">
+                            <td class="px-4 py-4 font-bold text-[#1c1f2a]">Groupement Teranga</td>
+                            <td class="px-4 py-4 text-[#555b6e]">77 000 00 00</td>
+                            <td class="px-4 py-4 text-[#555b6e]">Pikine, Dakar</td>
+                            <td class="px-4 py-4 text-right whitespace-nowrap">
+                                <a href="#" class="text-[#2c3e91] font-bold hover:underline mr-3">Modifier</a>
+                                <a href="#" class="text-red-600 hover:underline">Supprimer</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+    </section>
+
+    <!-- ================= EXERCICE ================= -->
+    <section id="exercice">
+
+        <header class="bg-white">
+            <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
+                <a href="#groupement" class="py-4 text-xl font-bold text-[#1c1f2a]">
+                    La Calebasse
+                </a>
+
+                <nav>
+                    <ul class="flex gap-2 text-sm">
+                        <li>
+                            <a href="#groupement" class="block px-4 py-3 rounded-full text-[#555b6e] hover:bg-[#f2f3ef] hover:text-[#1c1f2a]">
+                                Groupement
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#exercice" class="block px-4 py-3 rounded-full bg-[#e6e9f6] text-[#2c3e91] font-bold">
+                                Exercice
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#campagne" class="block px-4 py-3 rounded-full text-[#555b6e] hover:bg-[#f2f3ef] hover:text-[#1c1f2a]">
+                                Campagne
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main class="max-w-6xl mx-auto px-6 py-8">
+
+            <div class="mb-7">
+                <h1 class="text-3xl font-bold text-[#1c1f2a]">Liste des exercices</h1>
+                <p class="text-sm text-[#555b6e] mt-2">
+                    Gérez les exercices de vos groupements.
+                </p>
+            </div>
+
+            <details class="mb-6 bg-white border border-[#dadde3] rounded-xl">
+                <summary class="cursor-pointer list-none inline-flex m-5 bg-[#2c3e91] hover:bg-[#202f76] text-white px-5 py-3 rounded-lg text-sm font-bold">
+                    + Ajouter un exercice
+                </summary>
+
+                <form action="#" method="post" class="px-5 pb-5 grid gap-4 sm:grid-cols-3">
+
+                    <div>
+                        <label for="e-nom" class="block text-sm font-bold mb-2">Nom</label>
+                        <input id="e-nom" name="nom" type="text" required
+                            class="w-full border border-[#dadde3] bg-white text-[#1c1f2a] rounded-lg px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#a86412]/40 focus:border-[#2c3e91]">
+                    </div>
+
+                    <div>
+                        <label for="e-debut" class="block text-sm font-bold mb-2">Date début</label>
+                        <input id="e-debut" name="dateDebut" type="date" required
+                            class="w-full border border-[#dadde3] bg-white text-[#1c1f2a] rounded-lg px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#a86412]/40 focus:border-[#2c3e91]">
+                    </div>
+
+                    <div>
+                        <label for="e-fin" class="block text-sm font-bold mb-2">Date fin</label>
+                        <input id="e-fin" name="dateFin" type="date" required
+                            class="w-full border border-[#dadde3] bg-white text-[#1c1f2a] rounded-lg px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#a86412]/40 focus:border-[#2c3e91]">
+                    </div>
+
+                    <div>
+                        <label for="e-retrib" class="block text-sm font-bold mb-2">Date rétribution</label>
+                        <input id="e-retrib" name="dateRestribution" type="date" required
+                            class="w-full border border-[#dadde3] bg-white text-[#1c1f2a] rounded-lg px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#a86412]/40 focus:border-[#2c3e91]">
+                    </div>
+
+                    <div>
+                        <label for="e-status" class="block text-sm font-bold mb-2">Statut</label>
+                        <select id="e-status" name="status"
+                            class="w-full border border-[#dadde3] bg-white text-[#1c1f2a] rounded-lg px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#a86412]/40 focus:border-[#2c3e91]">
+                            <option value="ENCOURS">ENCOURS</option>
+                            <option value="TERMINER">TERMINER</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="e-groupement" class="block text-sm font-bold mb-2">Groupement</label>
+                        <select id="e-groupement" name="groupement"
+                            class="w-full border border-[#dadde3] bg-white text-[#1c1f2a] rounded-lg px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#a86412]/40 focus:border-[#2c3e91]">
+                            <option value="1">Groupement Teranga</option>
+                            <option value="2">Groupement Jigeen</option>
+                        </select>
+                    </div>
+
+                    <div class="sm:col-span-3">
+                        <button type="submit" class="px-5 py-2.5 rounded-lg text-sm font-bold bg-[#2c3e91] hover:bg-[#202f76] text-white">
+                            Enregistrer
+                        </button>
+                    </div>
+
+                </form>
+            </details>
+
+            <div class="bg-white border border-[#dadde3] rounded-xl overflow-x-auto">
+                <table class="w-full text-sm text-left">
+                    <thead class="bg-[#e6e9f6] text-[#2c3e91]">
+                        <tr>
+                            <th class="px-4 py-4 font-bold">Nom</th>
+                            <th class="px-4 py-4 font-bold">Date début</th>
+                            <th class="px-4 py-4 font-bold">Date fin</th>
+                            <th class="px-4 py-4 font-bold">Date rétribution</th>
+                            <th class="px-4 py-4 font-bold">Statut</th>
+                            <th class="px-4 py-4 font-bold">Groupement</th>
+                            <th class="px-4 py-4 font-bold text-right">Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="divide-y divide-[#dadde3]">
+
+                        <tr class="hover:bg-[#f2f3ef]">
+                            <td class="px-4 py-4 font-bold">Exercice 2026</td>
+                            <td class="px-4 py-4 text-[#555b6e]">2026-01-01</td>
+                            <td class="px-4 py-4 text-[#555b6e]">2026-12-31</td>
+                            <td class="px-4 py-4 text-[#555b6e]">2027-01-15</td>
+                            <td class="px-4 py-4">
+                                <span class="px-3 py-1 rounded-full text-xs font-bold bg-[#2c3e91] text-white">
+                                    ENCOURS
+                                </span>
+                            </td>
+                            <td class="px-4 py-4">Groupement Teranga</td>
+                            <td class="px-4 py-4 text-right whitespace-nowrap">
+                                <a href="#" class="text-[#2c3e91] font-bold hover:underline mr-3">Modifier</a>
+                                <a href="#" class="text-red-600 hover:underline">Supprimer</a>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-[#f2f3ef]">
+                            <td class="px-4 py-4 font-bold">Exercice 2025</td>
+                            <td class="px-4 py-4 text-[#555b6e]">2025-01-01</td>
+                            <td class="px-4 py-4 text-[#555b6e]">2025-12-31</td>
+                            <td class="px-4 py-4 text-[#555b6e]">2026-01-15</td>
+                            <td class="px-4 py-4">
+                                <span class="px-3 py-1 rounded-full text-xs font-bold border border-[#555b6e] text-[#555b6e]">
+                                    TERMINER
+                                </span>
+                            </td>
+                            <td class="px-4 py-4">Groupement Jigeen</td>
+                            <td class="px-4 py-4 text-right whitespace-nowrap">
+                                <a href="#" class="text-[#2c3e91] font-bold hover:underline mr-3">Modifier</a>
+                                <a href="#" class="text-red-600 hover:underline">Supprimer</a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+    </section>
+
+    <!-- ================= CAMPAGNE ================= -->
+    <section id="campagne">
+
+        <header class="bg-white">
+            <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
+                <a href="#groupement" class="py-4 text-xl font-bold text-[#1c1f2a]">
+                    La Calebasse
+                </a>
+
+                <nav>
+                    <ul class="flex gap-2 text-sm">
+                        <li>
+                            <a href="#groupement" class="block px-4 py-3 rounded-full text-[#555b6e] hover:bg-[#f2f3ef] hover:text-[#1c1f2a]">
+                                Groupement
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#exercice" class="block px-4 py-3 rounded-full text-[#555b6e] hover:bg-[#f2f3ef] hover:text-[#1c1f2a]">
+                                Exercice
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#campagne" class="block px-4 py-3 rounded-full bg-[#e6e9f6] text-[#2c3e91] font-bold">
+                                Campagne
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main class="max-w-6xl mx-auto px-6 py-8">
+
+            <div class="mb-7">
+                <h1 class="text-3xl font-bold text-[#1c1f2a]">Liste des campagnes</h1>
+                <p class="text-sm text-[#555b6e] mt-2">
+                    Gérez vos campagnes de tontine et d'épargne.
+                </p>
+            </div>
+
+            <details class="mb-6 bg-white border border-[#dadde3] rounded-xl">
+                <summary class="cursor-pointer list-none inline-flex m-5 bg-[#2c3e91] hover:bg-[#202f76] text-white px-5 py-3 rounded-lg text-sm font-bold">
+                    + Ajouter une campagne
+                </summary>
+
+                <form action="#" method="post" class="px-5 pb-5 grid gap-4 sm:grid-cols-3">
+
+                    <div>
+                        <label for="c-nom" class="block text-sm font-bold mb-2">Nom</label>
+                        <input id="c-nom" name="nom" type="text" required
+                            class="w-full border border-[#dadde3] bg-white text-[#1c1f2a] rounded-lg px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#a86412]/40 focus:border-[#2c3e91]">
+                    </div>
+
+                    <div>
+                        <label for="c-type" class="block text-sm font-bold mb-2">Type de campagne</label>
+                        <select id="c-type" name="type"
+                            class="w-full border border-[#dadde3] bg-white text-[#1c1f2a] rounded-lg px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#a86412]/40 focus:border-[#2c3e91]">
+                            <option value="tontine">Tontine</option>
+                            <option value="epargne">Épargne</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="c-groupement" class="block text-sm font-bold mb-2">Groupement</label>
+                        <select id="c-groupement" name="groupement"
+                            class="w-full border border-[#dadde3] bg-white text-[#1c1f2a] rounded-lg px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#a86412]/40 focus:border-[#2c3e91]">
+                            <option value="1">Groupement Teranga</option>
+                            <option value="2">Groupement Jigeen</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="c-debut" class="block text-sm font-bold mb-2">Date début</label>
+                        <input id="c-debut" name="dateDebut" type="date" required
+                            class="w-full border border-[#dadde3] bg-white text-[#1c1f2a] rounded-lg px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#a86412]/40 focus:border-[#2c3e91]">
+                    </div>
+
+                    <div>
+                        <label for="c-fin" class="block text-sm font-bold mb-2">Date fin</label>
+                        <input id="c-fin" name="dateFin" type="date" required
+                            class="w-full border border-[#dadde3] bg-white text-[#1c1f2a] rounded-lg px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#a86412]/40 focus:border-[#2c3e91]">
+                    </div>
+
+                    <div>
+                        <label for="c-caisse" class="block text-sm font-bold mb-2">Caisse sociale</label>
+                        <select id="c-caisse" name="caisse"
+                            class="w-full border border-[#dadde3] bg-white text-[#1c1f2a] rounded-lg px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#a86412]/40 focus:border-[#2c3e91]">
+                            <option value="1">Caisse n°1</option>
+                            <option value="2">Caisse n°2</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="c-cotisation" class="block text-sm font-bold mb-2">
+                            Montant cotisation <span class="text-[#a86412]">(Tontine)</span>
+                        </label>
+                        <input id="c-cotisation" name="montantCotisation" type="number" min="0"
+                            class="w-full border border-[#dadde3] bg-white text-[#1c1f2a] rounded-lg px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#a86412]/40 focus:border-[#2c3e91]">
+                    </div>
+
+                    <div>
+                        <label for="c-objectif" class="block text-sm font-bold mb-2">
+                            Objectif d'épargne <span class="text-[#a86412]">(Épargne)</span>
+                        </label>
+                        <input id="c-objectif" name="objectifEpargne" type="number" min="0"
+                            class="w-full border border-[#dadde3] bg-white text-[#1c1f2a] rounded-lg px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#a86412]/40 focus:border-[#2c3e91]">
+                    </div>
+
+                    <div class="sm:col-span-3">
+                        <button type="submit" class="px-5 py-2.5 rounded-lg text-sm font-bold bg-[#2c3e91] hover:bg-[#202f76] text-white">
+                            Enregistrer
+                        </button>
+                    </div>
+
+                </form>
+            </details>
+
+            <div class="bg-white border border-[#dadde3] rounded-xl overflow-x-auto">
+                <table class="w-full text-sm text-left">
+                    <thead class="bg-[#e6e9f6] text-[#2c3e91]">
+                        <tr>
+                            <th class="px-4 py-4 font-bold">Nom</th>
+                            <th class="px-4 py-4 font-bold">Type</th>
+                            <th class="px-4 py-4 font-bold">Date début</th>
+                            <th class="px-4 py-4 font-bold">Date fin</th>
+                            <th class="px-4 py-4 font-bold">Caisse sociale</th>
+                            <th class="px-4 py-4 font-bold">Groupement</th>
+                            <th class="px-4 py-4 font-bold">Montant / Objectif</th>
+                            <th class="px-4 py-4 font-bold text-right">Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="divide-y divide-[#dadde3]">
+
+                        <tr class="hover:bg-[#f2f3ef]">
+                            <td class="px-4 py-4 font-bold">Tontine mensuelle</td>
+                            <td class="px-4 py-4">
+                                <span class="px-3 py-1 rounded-full text-xs font-bold bg-[#2c3e91] text-white">
+                                    Tontine
+                                </span>
+                            </td>
+                            <td class="px-4 py-4 text-[#555b6e]">2026-01-01</td>
+                            <td class="px-4 py-4 text-[#555b6e]">2026-12-31</td>
+                            <td class="px-4 py-4">Caisse n°1</td>
+                            <td class="px-4 py-4">Groupement Teranga</td>
+                            <td class="px-4 py-4 font-bold">25 000 FCFA</td>
+                            <td class="px-4 py-4 text-right whitespace-nowrap">
+                                <a href="#" class="text-[#2c3e91] font-bold hover:underline mr-3">Modifier</a>
+                                <a href="#" class="text-red-600 hover:underline">Supprimer</a>
+                            </td>
+                        </tr>
+
+                        <tr class="hover:bg-[#f2f3ef]">
+                            <td class="px-4 py-4 font-bold">Épargne Tabaski</td>
+                            <td class="px-4 py-4">
+                                <span class="px-3 py-1 rounded-full text-xs font-bold border border-[#a86412] text-[#a86412]">
+                                    Épargne
+                                </span>
+                            </td>
+                            <td class="px-4 py-4 text-[#555b6e]">2026-03-01</td>
+                            <td class="px-4 py-4 text-[#555b6e]">2026-06-30</td>
+                            <td class="px-4 py-4">Caisse n°2</td>
+                            <td class="px-4 py-4">Groupement Jigeen</td>
+                            <td class="px-4 py-4 font-bold">500 000 FCFA</td>
+                            <td class="px-4 py-4 text-right whitespace-nowrap">
+                                <a href="#" class="text-[#2c3e91] font-bold hover:underline mr-3">Modifier</a>
+                                <a href="#" class="text-red-600 hover:underline">Supprimer</a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+    </section>
+
+</body>
+</html>
