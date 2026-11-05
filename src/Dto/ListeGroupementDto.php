@@ -15,7 +15,7 @@ class ListeGroupementDto {
 
     }
 
-    public static function fromEntity( Groupement $groupement,DtoExerciceEncoursDto $exerciceEncours): self {
+    public static function fromEntity( Groupement $groupement, DtoExerciceEncoursDto $exerciceEncours): self {
         // A Implementer pour convertir un entity Groupement en ListeGroupementDto
         return new self(
             $groupement->getNom(),
